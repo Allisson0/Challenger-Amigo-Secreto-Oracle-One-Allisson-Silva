@@ -15,3 +15,7 @@
 
 <h3>Listas e Sorteios:</h3>
 <img width="1444" height="750" alt="image" src="https://github.com/user-attachments/assets/81c06d8c-b704-4d67-aced-e8f48e545214" />
+
+<h1>Acesso do Challenger</h1>
+<p>Estou disponibilizando o link do meu Challenger com deploy realizado pelo site vercel.com.</p>
+<a href="https://allisson-challenger-amigo-secreto-oracle-one.vercel.app">Challenger Amigo Secreto - Allisson</a>

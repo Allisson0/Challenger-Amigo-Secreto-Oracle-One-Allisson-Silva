@@ -10,30 +10,15 @@ function adicionarAmigo(){
     // alterarPlaceHolder("Digite um nome");
     
     //pegando o input de id "amigo"
-    let amigo = document.getElementById("amigo").value;
+    let amigoInput = document.getElementById("amigo").value;
 
     //Condição de verificação se houve ou não digitação no campo correto.
-    if(amigo!=""){    
+    if(amigoInput!=""){    
 
-        //Adicionar o novo amigo à lista e já pega o novo tamanho da lista.
-        let tamanho = listaAmigo.push(amigo);
+        //função de exibição da lista de amigos
+        exibirLista(amigoInput);
 
-        //função que apaga toda a lista da Lista ul para fins de verificação e correção de bugs
-        lista.innerHTML = '';
-
-        //for que cria uma série de itens "li" do HTML com base na listaAmigo.
-        for(let i = 0;tamanho > i;i++){
-
-            //criação do novo elemento li
-            let novoAmigo = document.createElement('li');
-
-            //adicionando texto ao novo elemento li
-            novoAmigo.innerHTML = listaAmigo[i];
-
-            //inserindo o novo elemento li à lista HTML principal ul
-            lista.append(novoAmigo);
-        }
-
+        //limpar o campo input
         limparCampo("amigo");
     }
 
@@ -57,6 +42,29 @@ function limparCampo(campo){
     tag.value=  "";
 }
 
+//Função que exibe a lista dos amigos atualizada.
+function exibirLista(amigo){
+
+    //Adicionar o novo amigo à lista e já pega o novo tamanho da lista.
+    let tamanho = listaAmigo.push(amigo);
+
+    //função que apaga toda a lista da Lista ul para fins de verificação e correção de bugs
+    lista.innerHTML = '';
+
+    //for que cria uma série de itens "li" do HTML com base na listaAmigo.
+    for(let i = 0; tamanho > i; i++){
+
+        //criação do novo elemento li
+        let novoAmigo = document.createElement('li');
+
+        //adicionando texto ao novo elemento li
+        novoAmigo.innerHTML = listaAmigo[i];
+
+        //inserindo o novo elemento li à lista HTML principal ul
+        lista.append(novoAmigo);
+    }
+}
+
 //Função de sorteio do amigo secreto, ao clicar do botão "Sortear"
 function sortearAmigo(){
     //tamanho da lista atual
@@ -66,7 +74,7 @@ function sortearAmigo(){
     if (tamanho != 0){
 
         //sorteando o item
-        let sorteio = parseInt(Math.random() * tamanho);
+        let sorteio = Math.floor(Math.random() * tamanho);
 
         //tag de id "resultado" para inserção do resultado
         let resultado = document.getElementById("resultado");
